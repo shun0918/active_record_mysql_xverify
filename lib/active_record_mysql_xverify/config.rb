@@ -3,7 +3,7 @@
 module ActiveRecordMysqlXverify
   @config = {
     handle_if: ->(_) { true },
-    verify: ->(conn) { conn.ping },
+    verify: lambda(&:ping),
     only_on_error: false,
   }
 
