@@ -35,8 +35,13 @@ jobs:
           - gemfiles/ar80.gemfile
         exclude:
           # Ruby 3.3 doesn't support ActiveRecord 6.0
-          - ruby: 3.3
+          - ruby: '3.3'
             gemfile: gemfiles/ar60.gemfile
+          # Rails 8.0 requires Ruby >= 3.2
+          - ruby: '3.0'
+            gemfile: gemfiles/ar80.gemfile
+          - ruby: '3.1'
+            gemfile: gemfiles/ar80.gemfile
     env:
       DATABASE_HOST: 127.0.0.1
       BUNDLE_GEMFILE: ${{ matrix.gemfile }}
