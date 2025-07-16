@@ -33,6 +33,7 @@ module ActiveRecordMysqlXverify
     def _extend_verify?
       handle_if = ActiveRecordMysqlXverify.handle_if
       return handle_if.call(@config) unless ActiveRecordMysqlXverify.only_on_error
+
       Thread.current[ActiveRecordMysqlXverify::EXTEND_VERIFY_FLAG] && handle_if.call(@config)
     end
   end
