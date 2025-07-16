@@ -4,12 +4,12 @@ services:
     volumes:
       - ./:/mnt
       - gems_bin:/usr/local/bin
-      - gems:/usr/local/lib/ruby/gems/3.3.6
+      - gems:/usr/local/lib/ruby/gems/3.3.8
     profiles:
       - extra
   mysql:
     platform: linux/amd64
-    image: mysql:8.0.40
+    image: mysql:8.0.42
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
 volumes:

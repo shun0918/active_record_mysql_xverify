@@ -1,4 +1,4 @@
-FROM rubylang/ruby:2.7
+FROM rubylang/ruby:3.3.8
 
 RUN apt-get update && \
   apt-get install -y \
